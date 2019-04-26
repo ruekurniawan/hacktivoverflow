@@ -57,7 +57,18 @@ class AnswerController {
       })
   }
 
+  static findAll(req, res) {
+    Answer
+      .find({})
+      .then(answerResult => {
+        res.status(200).json(answerResult)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
   static create(req, res) {
+    // console.log(req.headers)
     let answered = {}
     Answer
       .create({
@@ -84,7 +95,6 @@ class AnswerController {
   static update(req, res) {
     Answer  
       .findByIdAndUpdate(req.params.id, {
-        title: req.body.title,
         description: req.body.description
       })
       .then((updateAnswer) => {

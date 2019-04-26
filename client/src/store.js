@@ -7,11 +7,17 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    isLogin: false
+    isLogin: false,
+    userLogin: false
   },
   mutations: {
     successLogin(state, payload) {
+      // console.log(payload)
       state.isLogin = payload;
+    },
+    idLogin(state, payload) {
+      // console.log(payload)
+      state.userLogin = payload
     }
   },
   actions: {
@@ -29,6 +35,7 @@ export default new Vuex.Store({
         // console.log(data)
         commit('successLogin', true)
         localStorage.setItem('token', data.access_token)
+        commit('idLogin', true)
       })
       .catch(err => { 
         console.log(err)

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 let answerSchema = new Schema({
   userId: {
     type: 'ObjectId',
-    ref: 'User'
+    ref: 'user'
   },
   title: {
     type: String,
@@ -16,11 +16,11 @@ let answerSchema = new Schema({
   },
   upvotes: [{
     type: 'ObjectId',
-    ref: 'User'
+    ref: 'user'
   }],
   downvotes: [{
     type: 'ObjectId',
-    ref: 'User'
+    ref: 'user'
   }]
 })
 

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const questSchema = new Schema({
   userId: {
     type: 'ObjectId',
-    ref: 'User'
+    ref: 'user'
   },
   title: {
     type: String,
@@ -16,15 +16,15 @@ const questSchema = new Schema({
   },
   answer:[{
     type: 'ObjectId',
-    ref: 'Answer'
+    ref: 'answer'
   }],
   upvotes: [{
     type: 'ObjectId',
-    ref: 'User'
+    ref: 'user'
   }],
   downvotes: [{
     type: 'ObjectId',
-    ref: 'User'
+    ref: 'user'
   }]
 })
 

@@ -38,12 +38,28 @@ export default new Router({
       component: () => import(/* webpackChunkName: "register" */ './views/Register.vue')
     },
     {
-      path: '/question',
-      name: 'Questions',
+      path: '/questions',
+      name: 'Question',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "question" */ './views/Questions.vue')
+    },
+    {
+      path: '/questions/:id',
+      name: 'Questions',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "question" */ './views/QuestionId.vue')
+    },
+    {
+      path: '/asnwer/:id',
+      name: 'Answer',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "question" */ './views/updateAnswer.vue')
     }
   ]
 })

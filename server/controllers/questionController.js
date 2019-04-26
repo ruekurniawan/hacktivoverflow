@@ -15,6 +15,12 @@ class QuestController {
   static readOne(req, res) {
     Quest
       .findById(req.params.id)
+      .populate({
+        path: 'answer',
+        populate: {
+          path: 'userId'
+        }
+      })
       .then((oneData) => {
         res.status(200).json(oneData)
       })

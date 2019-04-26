@@ -3,7 +3,7 @@
     <div class="container w-75">
       <div class="border-bottom my-3">
         <h3 class="title">Top Questions</h3>
-        <router-link to="/questions/ask">
+        <router-link to="/questions">
           <button class="btn btn-md btn-primary btn-text my-3">
             <span>Ask Question</span>
           </button>
@@ -50,7 +50,7 @@ export default {
         url: `http://localhost:3000/quest`
       })
         .then(({ data }) => {
-          console.log(data)
+          // console.log(data)
           this.questions = data;
         })
         .catch(err => {
